@@ -7,6 +7,7 @@ const cookieparser = require('cookie-parser')
 const User = require('./models/user')
 const Book = require('./models/book')
 const checkUser = require('./utils/jwt')
+const bookRoutes = require('./routes/bookRoutes')
 
 mongoose.connect('mongodb://localhost:27017/bibiolotek')
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieparser())
 
+app.use(bookRoutes);
 
 app.get("/", (req, res) => {
     res.render("index")
@@ -31,9 +33,6 @@ app.get("/login", (req, res) => {
 })
 app.get('/createUser', (req, res) => {
     res.render("createUser")
-})
-app.get("/register", checkUser, (req, res, next) => {
-        res.render("register")
 })
 app.post("/login", async (req, res) => {
     const { mail, passord } = req.body;
@@ -61,7 +60,6 @@ app.post("/login", async (req, res) => {
         res.status(401).send("Bruker eller passord stemmer ikke")
     }
 })
-
 app.post("/createUser", async (req, res) => {
     // henter ut info fra frontenden
     const { navn, epost, mobil, adresse, passord, gjentapassord } = req.body;
@@ -86,18 +84,5 @@ app.post("/createUser", async (req, res) => {
         res.status(400).send('Dette passord stemmer ikke overens')
     }
 })
-
-app.post("/register", checkUser, async (req, res) => {
-        const { forfatter, tittle, antallSider, forlag, ISBN, arstall } = req.body;
-
-        const result = new Book({
-            forfatter, tittle, antallSider, forlag, ISBN, arstall
-        })
-        await result.save()
-
-        console.log(result);
-        res.status(201).send("Takk for registrering")
-})
-
 
 app.listen(4000)
