@@ -6,6 +6,7 @@ const cookieparser = require('cookie-parser')
 
 const User = require('./models/user')
 const Book = require('./models/book')
+const checkUser = require('./utils/jwt')
 
 mongoose.connect('mongodb://localhost:27017/bibiolotek')
 
@@ -98,24 +99,5 @@ app.post("/register", checkUser, async (req, res) => {
         res.status(201).send("Takk for registrering")
 })
 
-async function checkUser(req, res, next) {
-    console.log(req.cookies)
-    let jwtCookie = req.cookies.jwt;
 
-    jwt.verify(jwtCookie, 'turbofish9000', async function(err, decoded) {
-
-        let userId = decoded.userId;
-        let user = await User.findOne({_id: userId})
-        console.log(user);
-
-        if(user.rolle === "admin") {
-            console.log("user is admin")
-           next();
-        } else {
-            res.redirect("/");
-        }
-    })
-
-
-}
 app.listen(4000)
