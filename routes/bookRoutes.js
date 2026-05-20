@@ -7,4 +7,8 @@ const bookController = require('../controllers/bookControllers')
 router.get('/register', checkUser, bookController.getRegisterBooks)
 router.post('/register', checkUser, bookController.createRegisterBooks)
 
+
+
+router.get('/book/:id', bookController.getBook) 
+
 module.exports = router;
