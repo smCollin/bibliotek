@@ -1,0 +1,67 @@
+/* Pink palette page styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background: radial-gradient(circle at top, #ffd2e8 0%, #ffebf5 35%, #ffe3f0 100%); */
+  color: #3f1d3a;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px auto 24px;
+  color: #6a1f4f;
+  letter-spacing: 0.04em;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 18px;
+}
+
+.book {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid #ffffff;
+  box-shadow: 0 18px 40px rgba(114, 35, 86, 0.12);
+  border-radius: 18px;
+  padding: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(114, 35, 86, 0.18);
+}
+
+.book li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.book li:first-child {
+  margin-top: 0;
+}
+
+.book li strong {
+  display: inline-block;
+  width: 100px;
+  color: #842764;
+}
+
+.book li span {
+  color: #4c2140;
+}
+
+@media (max-width: 520px) {
+  .books {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

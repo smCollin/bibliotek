@@ -70,7 +70,7 @@ const userController = {
         try {
             const user = await User.findById(id)
             console.log(user);
-            res.render("user")
+            res.render("user", {user})
         } catch (error) {
             console.log(error);
             res.status(404).send("Finner ikke bruker")

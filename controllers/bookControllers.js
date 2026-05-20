@@ -16,6 +16,12 @@ const bookController = {
             console.log(result);
             res.status(201).send("Takk for registrering")
     },
+    
+    showBooks: async (req, res) => {
+        const books = await Book.find() 
+    
+        res.render("showBooks", {books})
+    },
     getBook: async (req, res) => {
         const id = req.params.id;
 
@@ -27,5 +33,6 @@ const bookController = {
         }
     }
 }
+
 
 module.exports = bookController;

@@ -11,4 +11,7 @@ router.post('/register', checkUser, bookController.createRegisterBooks)
 
 router.get('/book/:id', bookController.getBook) 
 
+router.get('/books', bookController.showBooks)
+
+
 module.exports = router;

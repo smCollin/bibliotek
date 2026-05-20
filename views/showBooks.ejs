@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>Her er alle bøkene</h1>
+ <div class="books">
+    <% books.forEach(function(books) { %>
+        <div class="book">
+            <ul>
+                <li><strong>Forfatter:</strong> <span><%= books.forfatter %></span></li>
+                <li><strong>Tittel:</strong> <span><%= books.tittle %></span></li>
+                <li><strong>Antall sider:</strong> <span><%= books.antallSider %></span></li>
+                <li><strong>Forlag:</strong> <span><%= books.forlag %></span></li>
+                <li><strong>ISBN:</strong> <span><%= books.ISBN %></span></li>
+                <li><strong>Årstall:</strong> <span><%= books.arstall %></span></li>
+            </ul>
+        </div>
+    <% }); %>
+ </div>
+
+
+</body>
+</html>
