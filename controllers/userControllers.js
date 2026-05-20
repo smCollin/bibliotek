@@ -58,7 +58,12 @@ const userController = {
         } else {
             res.status(401).send("Bruker eller passord stemmer ikke")
         }
-    }
+    },
+    getShowUsers: async (req, res) => {
+        const users = await User.find() 
+        res.render("showUsers", {users})
+    },
+    
 }
 
 module.exports = userController;

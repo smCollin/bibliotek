@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>Her er alle bøkene</h1>
+ <div class="users">
+    <% users.forEach(function(users) { %>
+        <div class="user">
+            <ul>
+                <li><strong>navn:</strong> <span><%= users.navn %></span></li>
+                <li><strong>epost:</strong> <span><%= users.epost %></span></li>
+                <li><strong>mobil:</strong> <span><%= users.mobil %></span></li>
+                <li><strong>adresse:</strong> <span><%= users.adresse %></span></li>
+                <li><strong>passord:</strong> <span><%= users.passord %></span></li>
+                <li><strong>rolle:</strong> <span><%= users.rolle %></span></li>
+            </ul>
+        </div>
+    <% }); %>
+ </div>
+
+
+</body>
+</html>
