@@ -11,6 +11,7 @@ router.post('/login', userController.postLoginUser)
 
 router.get('/users', userController.getShowUsers)
 
-router.get("/users/:id", userController.getUser);
+router.get('/users/:id', userController.getUser);
+router.post('/users/:id', userController.deleteUser)
 
 module.exports = router; 

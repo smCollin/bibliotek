@@ -76,6 +76,15 @@ const userController = {
             res.status(404).send("Finner ikke bruker")
             res.send(error)
         }
+        },
+        deleteUser: async (req, res) => {
+            const id = req.params.id
+            try {
+            const user = await User.deleteOne({_id:id})
+            res.redirect('/users')
+            } catch (error) {
+                res.send("Kunne ikke slette bruker")
+            }
 
     }
 

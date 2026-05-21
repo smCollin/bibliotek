@@ -31,6 +31,15 @@ const bookController = {
         } catch (error) {
             res.send("Finner ikke bok")
         }
+    },
+    deleteBook: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const book = await Book.deleteOne({_id:id})
+            res.redirect("/books")
+        } catch (error) {
+            res.send("Kunne ikke slette")
+        }
     }
 }
 
