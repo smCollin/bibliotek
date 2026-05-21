@@ -19,6 +19,10 @@
                 <li><strong>ISBN:</strong> <span><%= books.ISBN %></span></li>
                 <li><strong>Årstall:</strong> <span><%= books.arstall %></span></li>
             </ul>
+            <form action="/book/<%= books._id %>"method="post">
+                <input type="submit" value="Slett">
+            </form>
+            <a href="/book/<%= books._id %>">Gå til bøker</a>
         </div>
     <% }); %>
  </div>

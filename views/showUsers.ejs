@@ -19,6 +19,11 @@
                 <li><strong>passord:</strong> <span><%= users.passord %></span></li>
                 <li><strong>rolle:</strong> <span><%= users.rolle %></span></li>
             </ul>
+            <form action="/users/<%= users._id %>" method="post">
+                <input type="submit" value="Slett">
+
+            </form>
+            <a href="/users/<%= users._id %>">Gå til bruker</a>
         </div>
     <% }); %>
  </div>
