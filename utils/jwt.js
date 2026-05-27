@@ -7,7 +7,7 @@ async function checkUser(req, res, next) {
     console.log(req.cookies)
     let jwtCookie = req.cookies.jwt;
 
-    jwt.verify(jwtCookie, 'turbofish9000', async function(err, decoded) {
+    jwt.verify(jwtCookie, process.env.JWT_SECRET, async function(err, decoded) {
 
         try {
                     let userId = decoded.userId;
