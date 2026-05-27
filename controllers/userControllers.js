@@ -52,7 +52,7 @@ const userController = {
 
             console.log(jsonwebtoken)
 
-            res.cookie("jwt", jsonwebtoken, { maxAge: process.env.COOKIE_LIMET * 60 * 60 * 1000, httpOnly: true })
+            res.cookie("jwt", jsonwebtoken, { maxAge: process.env.COOKIE_LIMIT * 60 * 60 * 1000, httpOnly: true })
 
             res.redirect("/register")
         } else {
