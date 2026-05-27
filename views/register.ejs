@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("partials/header") %>
 <body>
-    <h1>Her kan du registrere bøker til lånns</h1>
-    <form action="" method="post">
-        <input type="text" name="forfatter" id="forfatter" placeholder="forfatter">
-        <input type="text" name="tittle" id="tittle" placeholder="tittle">
-        <input type="number" name="antallSider" id="antallSider" placeholder="antall Sider">
-        <input type="text" name="forlag" id="Forelag" placeholder="Forelag">
-        <input type="text" name="ISBN" id="ISBN" placeholder="ISBN">
-        <input type="number" name="arstall" id="arstall" placeholder="års tall">
-        <button>registrer</button>
-    </form>
+    <div class="wrapper">
+        <h1>Her kan du registrere bøker til lånns</h1>
+        <form action="" method="post">
+            <input type="text" name="forfatter" id="forfatter" placeholder="forfatter">
+            <input type="text" name="tittle" id="tittle" placeholder="tittle">
+            <input type="number" name="antallSider" id="antallSider" placeholder="antall Sider">
+            <input type="text" name="forlag" id="Forelag" placeholder="Forelag">
+            <input type="text" name="ISBN" id="ISBN" placeholder="ISBN">
+            <input type="number" name="arstall" id="arstall" placeholder="års tall">
+            <button>registrer</button>
+        </form>
+    </div> 
 </body>
 </html>

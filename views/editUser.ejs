@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/header") %>
+<body>
+    <h1>Her kan du redigere bruker</h1>
+    <form action="" method="post">
+        <input type="text" name="navn" id="navn" placeholder="navn" value="<%= book.navn %>">
+        <input type="text" name="epost" id="epost" placeholder="epost"value="<%= book.epost %>">
+        <input type="number" name="mobil" id="mobil" placeholder="mobil"value="<%= book.mobil %>">
+        <input type="text" name="adresse" id="adresse" placeholder="adresse"value="<%= book.adresse %>">
+        <input type="text" name="passord" id="passord" placeholder="passord"value="<%= book.passord %>">
+        <input type="number" name="rolle" id="rolle" placeholder="års tall"value="<%= book.rolle %>">
+        <button>Rediger</button>
+    </form>
+</body>
+</html>

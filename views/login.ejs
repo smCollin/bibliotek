@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("partials/header") %>
+    
 <body>
-    <h1>Her logger du inn til Colins og Monicas bibiolotek</h1>
-    <form action="" method="post">
-        <input type="text" name="mail" id="mail" placeholder="colinsm@mail.no">
-        <input type="password" name="passord" id="passord" placeholder="Ditt passord">
-        <button>Logg inn</button>
-    </form>
-    <a href="/createUser">Har du ikke allerede en bruker? Lag en her</a>
+    <div class="wrapper">
+        <h1>Her logger du inn til Colins og Monicas bibiolotek</h1>
+        <form action="" method="post">
+            <input type="text" name="mail" id="mail" placeholder="colinsm@mail.no">
+            <input type="password" name="passord" id="passord" placeholder="Ditt passord">
+            <button>Logg inn</button>
+        </form>
+        <a href="/createUser">Har du ikke allerede en bruker? Lag en her</a>
+    </div>
 </body>
 </html>

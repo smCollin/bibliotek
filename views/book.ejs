@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("partials/header") %>
 
 <body>
     <h1>Her kan du se info om spesifikke bøker</h1>
@@ -19,6 +15,7 @@
         <form action="" method="post">
             <input type="submit" value="Slett">
         </form>
+        <a href="/book/edit/<%= book._id %>">Rediger bok</a>
     </div>
 
 </body>

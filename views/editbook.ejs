@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/header") %>
+<body>
+    <div class="wrapper">
+
+        <h1>Her kan du redigere bøker</h1>
+        <form action="" method="post">
+            <input type="text" name="forfatter" id="forfatter" placeholder="forfatter" value="<%= book.forfatter %>">
+            <input type="text" name="tittle" id="tittle" placeholder="tittle"value="<%= book.tittle %>">
+            <input type="number" name="antallSider" id="antallSider" placeholder="antall Sider"value="<%= book.antallSider %>">
+            <input type="text" name="forlag" id="Forelag" placeholder="Forelag"value="<%= book.forlag %>">
+            <input type="text" name="ISBN" id="ISBN" placeholder="ISBN"value="<%= book.ISBN %>">
+            <input type="number" name="arstall" id="arstall" placeholder="års tall"value="<%= book.arstall %>">
+            <button>Rediger</button>
+        </form>
+    </div>
+</body>
+</html>
