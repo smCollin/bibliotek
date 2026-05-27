@@ -10,7 +10,9 @@ router.post('/register', checkUser, bookController.createRegisterBooks)
 
 
 router.get('/book/:id', bookController.getBook) 
-router.post('/book/:id', bookController.deleteBook)
+router.post('/book/:id', checkUser, bookController.deleteBook)
+router.get('/book/edit/:id', checkUser, bookController.getEditBook)
+router.post('/book/edit/:id', checkUser, bookController.postEditBook)
 router.get('/books', bookController.showBooks)
 
 

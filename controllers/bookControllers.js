@@ -40,6 +40,26 @@ const bookController = {
         } catch (error) {
             res.send("Kunne ikke slette")
         }
+    },
+    getEditBook: async (req, res) => {
+        try {
+        const id =  req.params.id
+        const book = await Book.findById(id)
+        res.render('editbook', {book})
+        } catch (error) {
+            res.send("Kan ikke finne bok")
+        }
+    },
+    postEditBook: async (req, res) => {
+        try {
+            const id = req.params.id
+            const { forfatter, tittle, antallSider, forlag, ISBN, arstall } = req.body; 
+            const book = await Book.findByIdAndUpdate(id, {forfatter, tittle, antallSider, forlag, ISBN, arstall})
+            res.redirect('/books')
+        } catch (error) {
+            console.log(error);
+            res.send("Det gikk ikke å redigere")
+        }
     }
 }
 

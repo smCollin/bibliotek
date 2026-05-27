@@ -48,11 +48,11 @@ const userController = {
 
 
         if (isMatch) {
-            let jsonwebtoken = jwt.sign({ userId: user._id, role: user.rolle }, "turbofish9000")
+            let jsonwebtoken = jwt.sign({ userId: user._id, role: user.rolle }, process.env.JWT_SECRET)
 
             console.log(jsonwebtoken)
 
-            res.cookie("jwt", jsonwebtoken, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true })
+            res.cookie("jwt", jsonwebtoken, { maxAge: process.env.COOKIE_LIMET * 60 * 60 * 1000, httpOnly: true })
 
             res.redirect("/register")
         } else {
@@ -85,7 +85,14 @@ const userController = {
             } catch (error) {
                 res.send("Kunne ikke slette bruker")
             }
+    },
+    getEditUser: async (req, res) => { 
+        try {
+        const id = req.params.id
 
+        } catch (error) {
+            
+        }
     }
 
 }
